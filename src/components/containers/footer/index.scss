@@ -1,0 +1,30 @@
+footer {
+  border-top: 1px solid #e5e7eb;
+  clear: both;
+  font-size: 12px;
+  background: #fff;
+  position: relative;
+  z-index: 100;
+  color: #314659;
+  -webkit-box-shadow: 0 1000px 0 1000px #fff;
+  box-shadow: 0 1000px 0 1000px #fff;
+}
+footer .footer-wrap {
+  position: relative;
+  padding: 86px 114px 70px;
+}
+footer.dark {
+  background-color: #000;
+  color: hsla(0,0%,100%,.65);
+}
+footer.dark .bottom-bar {
+  border-top: 1px solid hsla(0,0%,100%,.25);
+  overflow: hidden;
+}
+footer .bottom-bar {
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+  padding: 20px 114px;
+  margin: 0;
+  line-height: 24px;
+}

@@ -1,0 +1,54 @@
+.cases {
+  .ant-table-column-sorter .anticon-caret-up, .ant-table-column-sorter .anticon-caret-down {
+    font-size: 20px;
+  }
+  .ant-table-column-sorter-up {
+    margin-bottom: 5px;
+  }
+  .ant-table-tbody > tr > td:first-child {
+    padding: 0 16px;
+    height: 76px;
+  }
+  .case-number {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    .badge {
+      position: absolute;
+      left: -15px;
+      top: 5px;
+      cursor: pointer;
+      .ant-badge-count {
+        background-color: #52c41a;
+      }
+    }
+  }
+  .custom-filter-dropdown {
+    padding: 8px;
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
+    display: flex;
+    width: calc(100% + 5px);
+    button {
+      margin-left: 10px;
+    }
+    .ant-input-group-addon {
+      padding: 2px;
+      cursor: pointer;
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .cases {
+    .case-number {
+      .badge {
+        .ant-badge-count {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}

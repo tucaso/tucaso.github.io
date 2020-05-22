@@ -1,0 +1,28 @@
+.signup {
+  .policies span, .remember-me span{
+    color: #fff;
+  }
+  
+  .btn-custom {
+    height: 40px;
+  }
+  .bg-trial-form {
+    padding-bottom: 0px !important;
+  }
+  .ant-form-item {
+    margin: 0px;
+  }
+  .ant-input {
+    color: #fff !important;
+  }
+  .ant-form-explain {
+    margin-bottom: 10px;
+    color: indianred !important;
+  }
+}
+
+.login {
+  .remember {
+    color: #fff;
+  }
+}

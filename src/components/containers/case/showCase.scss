@@ -1,0 +1,79 @@
+.show-case {
+  table thead tr th {
+    background-color: #434d78;
+    color: #fff;
+  }
+  .ant-table-tbody > tr:hover > td {
+    background: #648cb1;
+  }
+  .td_encabezado, .td_encabezado_fila1 {
+    font-weight: 500;
+  }
+  .ant-table-tbody > tr > td {
+    padding: 2px;
+    word-break: unset;
+  }
+  .not-active {
+    background-color: #b51b23;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px 30px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #fffffc;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  .ant-table-bordered .ant-table-tbody > tr > td {
+    border-left: 1px solid #e8e8e8;
+    padding: 10px 5px;
+  }
+  .description {
+    white-space: pre;
+    border-style: dashed;
+    border-width: 1px;
+    padding: 10px;
+    border-radius: 5px;
+    color: #444c77;
+    font-weight: 500;
+  }
+  .new-actuaciones {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #75a761;
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+    .value {
+      margin: 0 10px;
+      font-weight: bolder;
+    }
+  }
+  .new {
+    background-color: #75a76180;
+  }
+  .loading-case-data {
+    margin-top: 30px;
+    background-color: #6cb36c;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+  }
+  hr {
+    border-width: 0.7px;
+  }
+  .case-data-row {
+    border: 1px solid #e8e8e8;
+    border-right: none;
+    display: flex;
+    .case-data {
+      padding: 5px;
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid #e8e8e8;
+    }
+  }
+}
