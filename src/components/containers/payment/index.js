@@ -77,9 +77,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({}, dispatch);
 }
 
-export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(Payment)
-);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Payment));

@@ -108,7 +108,10 @@ class RecurrentMethod extends Component {
             </FormItem>
 
             <FormItem>
-              {getFieldDecorator('recurrent', {})(
+              {getFieldDecorator(
+                'recurrent',
+                {}
+              )(
                 <Checkbox style={stylesStripe}>
                   Deseas que hagamos el cobro automatico a tu tarjeta de credito cada mes?{' '}
                 </Checkbox>
@@ -135,11 +138,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ createPaymentStripe }, dispatch);
 }
 
-export default withRouter(
-  injectStripe(
-    connect(
-      mapStateToProps,
-      mapDispatchToProps
-    )(Form.create()(RecurrentMethod))
-  )
-);
+export default withRouter(injectStripe(connect(mapStateToProps, mapDispatchToProps)(Form.create()(RecurrentMethod))));

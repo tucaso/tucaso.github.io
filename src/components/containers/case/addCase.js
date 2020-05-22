@@ -172,13 +172,7 @@ class AddCase extends Component {
                 { required: true, message: 'Escribe el Número de Radicación!' },
                 { len: 23, message: 'El numero de radicación debe tener 23 caracteres' }
               ]
-            })(
-              <Input
-                type="number"
-                size="large"
-                onChange={e => this.setState({ caseNumber: e.target.value })}
-              />
-            )}
+            })(<Input type="number" size="large" onChange={e => this.setState({ caseNumber: e.target.value })} />)}
           </FormItem>
           <FormItem {...formItemLayout} label="Descripción" className="mt-2">
             {getFieldDecorator('description', {
@@ -186,14 +180,7 @@ class AddCase extends Component {
                 { required: false, message: 'Escribe una Descripcion para este caso' },
                 { max: 160, message: 'maximo 160 caracteres' }
               ]
-            })(
-              <TextArea
-                rows="3"
-                autoSize={{ minRows: 2 }}
-                size="large"
-                onChange={this.setDescription}
-              />
-            )}
+            })(<TextArea rows="3" autoSize={{ minRows: 2 }} size="large" onChange={this.setDescription} />)}
           </FormItem>
         </div>
         <FormItem {...tailFormItemLayout} className="add-button mt-2">
@@ -221,9 +208,4 @@ function mapDispatchToProps(dispatch) {
   );
 }
 
-export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(Form.create()(AddCase))
-);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Form.create()(AddCase)));

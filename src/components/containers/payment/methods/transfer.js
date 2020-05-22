@@ -215,11 +215,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ createPaymentWithImage }, dispatch);
 }
 
-export default Form.create()(
-  withRouter(
-    connect(
-      mapStateToProps,
-      mapDispatchToProps
-    )(TransferMethod)
-  )
-);
+export default Form.create()(withRouter(connect(mapStateToProps, mapDispatchToProps)(TransferMethod)));

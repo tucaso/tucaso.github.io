@@ -8,7 +8,7 @@ export const MOBILE_RESOLUTION = 768;
 export function getApiUrl() {
   switch (NODE_ENV) {
     case PRODUCTION:
-      return 'https://tucaso.azurewebsites.net';
+      return 'https://tucasoback.herokuapp.com';
     case STAGE:
       return LOCAL_DIR;
     default:

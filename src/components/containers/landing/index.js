@@ -51,8 +51,8 @@ class Landing extends Component {
                   <SmileOutlined />
                   {item.label}
                 </List.Item>
-              )}
-          }
+              );
+            }}
           />
           <GoogleOauthButton buttonText={'Empezar'} type="primary" planId={plan.id} size="large" useAntd={true} />
         </Card>
@@ -161,7 +161,8 @@ class Landing extends Component {
                   <div className="lan_features_content mt-4">
                     <h3 className="font-weight-bold">La solución perfecta para pequeñas y grandes empresas</h3>
                     <p className="text-muted lan_features_subtitle mt-3">
-                      Tendrás notificaciones de cualquier cambio en tus casos, ya no perderás tiempo revisando todos los días.
+                      Tendrás notificaciones de cualquier cambio en tus casos, ya no perderás tiempo revisando todos los
+                      días.
                     </p>
                     <p className="mb-0 text-muted">
                       <i className="mdi mdi-radiobox-marked text-custom" /> Perfecto para menos de 5 empleados.
@@ -410,9 +411,4 @@ function mapDispatchToProps(dispatch) {
     dispatch
   );
 }
-export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(Landing)
-);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Landing));

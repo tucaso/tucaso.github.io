@@ -140,9 +140,4 @@ function mapDispatchToProps(dispatch) {
   );
 }
 
-export default withRouter(
-  connect(
-    null,
-    mapDispatchToProps
-  )(PlanItem)
-);
+export default withRouter(connect(null, mapDispatchToProps)(PlanItem));

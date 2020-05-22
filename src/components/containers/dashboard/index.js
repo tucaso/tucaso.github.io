@@ -88,9 +88,4 @@ function mapDispatchToProps(dispatch) {
   );
 }
 
-export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(Dashboard)
-);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Dashboard));

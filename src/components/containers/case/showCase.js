@@ -101,12 +101,12 @@ class ShowCase extends Component {
               </Row>
               <Row className="mt-2">
                 <Col xs={24}>
-                  <strong>Ciudad:</strong> 
+                  <strong>Ciudad:</strong>
                 </Col>
               </Row>
               <Row className="mt-2">
                 <Col xs={24}>
-                  <strong>Entidad:</strong> 
+                  <strong>Entidad:</strong>
                 </Col>
               </Row>
               <Row className="mt-2">
@@ -233,16 +233,21 @@ class ShowCase extends Component {
                   </Col>
                 </Row>
               )}
-              {!this.props.caseState.Actuacions.length &&
-                this.props.caseState.userCases[0].active && (
-                  <div className="loading-case-data">
-                    Estamos cargando los datos de este caso, regresa en unos minutos y los veras aca
-                  </div>
-                )}
+              {!this.props.caseState.Actuacions.length && this.props.caseState.userCases[0].active && (
+                <div className="loading-case-data">
+                  Estamos cargando los datos de este caso, regresa en unos minutos y los veras aca
+                </div>
+              )}
               <Row className="case-info-table">
                 <table className="mt-30 ant-table-bordered">
-                  <thead className="ant-table-thead" dangerouslySetInnerHTML={{ __html: this.props.caseState.Actuacions[0].header }} />
-                  <tbody className="ant-table-tbody" dangerouslySetInnerHTML={{ __html: this.props.caseState.Actuacions[0].value }} />
+                  <thead
+                    className="ant-table-thead"
+                    dangerouslySetInnerHTML={{ __html: this.props.caseState.Actuacions[0].header }}
+                  />
+                  <tbody
+                    className="ant-table-tbody"
+                    dangerouslySetInnerHTML={{ __html: this.props.caseState.Actuacions[0].value }}
+                  />
                 </table>
               </Row>
             </div>
@@ -279,9 +284,4 @@ function mapDispatchToProps(dispatch) {
   );
 }
 
-export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(ShowCase)
-);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ShowCase));

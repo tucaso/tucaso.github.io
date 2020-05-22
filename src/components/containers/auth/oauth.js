@@ -44,9 +44,4 @@ function mapDispatchToProps(dispatch) {
   );
 }
 
-export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(OAuth)
-);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(OAuth));

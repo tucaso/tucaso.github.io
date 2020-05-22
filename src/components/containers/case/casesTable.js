@@ -162,7 +162,7 @@ class CasesTable extends Component {
         key: 'Entity.City.label',
         width: 120,
         filteredValue: filteredInfo['Entity.City.label'] || null,
-        onFilter: (value, record) => record.Entity.City.label.includes(value),
+        onFilter: (value, record) => record.Entity.City.label.includes(value)
       },
       {
         title: 'Entidad',
@@ -269,17 +269,16 @@ class CasesTable extends Component {
         <Row className="mt-10">
           Tienes un total de <strong>{this.props.casesState.total}</strong> procesos {this.props.caseLabel} actualmente
         </Row>
-        {(casesLeft < ten || casesLeft < 10) &&
-          this.state.casesWarningOpen && (
-            <Row className="mt-10 cases-warning">
-              <div className="close" onClick={() => this.setState({ casesWarningOpen: false })}>
-                x
-              </div>
-              Tu plan esta casi al limite, solo tienes <strong>{casesLeft}</strong> procesos libres por activar
-              <br />
-              Pásate a un plan con mas procesos disponibles
-            </Row>
-          )}
+        {(casesLeft < ten || casesLeft < 10) && this.state.casesWarningOpen && (
+          <Row className="mt-10 cases-warning">
+            <div className="close" onClick={() => this.setState({ casesWarningOpen: false })}>
+              x
+            </div>
+            Tu plan esta casi al limite, solo tienes <strong>{casesLeft}</strong> procesos libres por activar
+            <br />
+            Pásate a un plan con mas procesos disponibles
+          </Row>
+        )}
         <Table
           className="cases-list mt-10"
           columns={columns}

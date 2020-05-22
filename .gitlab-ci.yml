@@ -1,0 +1,57 @@
+image: cypress/base:8
+
+stages:
+  - test
+  - build
+  - deploy
+
+# before_script:
+#   - apt-get update -yqqq
+#   - apt-get install -yqq xvfb
+#   - apt-get install iceweasel -yqq
+#   - apt-get install dbus-x11 -yqq
+#   - Xvfb :99 -screen 0 1280x720x24 -ac &
+#   - export DISPLAY=:99
+#   - export $(dbus-launch)
+
+# This folder is cached between builds
+# http://docs.gitlab.com/ce/ci/yaml/README.html#cache
+cache:
+  paths:
+    - .npm
+    - cache/Cypress
+    - node_modules
+
+variables:
+  S3_BUCKET_NAME: "s3://bose-front"
+
+test_tucaso:
+  stage: test
+  script:
+    - yarn install
+    - yarn run cypress:test
+
+build_tucaso:
+  image: node:8
+  stage: build
+  only:
+    - master 
+  script:
+    - echo "------ Install dependencies ------"
+    - yarn install
+    - echo "------ Build APP ------"
+    - yarn run build:production
+  artifacts:
+    paths:
+      - build/
+
+deploy_tucaso:
+  image: python:latest
+  stage: deploy
+  only:
+    - master
+  before_script:
+    - pip install awscli 
+  script:
+    - aws s3 sync build/ $S3_BUCKET_NAME
+    - aws cloudfront create-invalidation --distribution-id E2JLT7RT2LIQA3 --paths '/*'

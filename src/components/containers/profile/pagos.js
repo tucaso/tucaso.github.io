@@ -61,9 +61,4 @@ function mapDispatchToProps(dispatch) {
   );
 }
 
-export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(Pagos)
-);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Pagos));

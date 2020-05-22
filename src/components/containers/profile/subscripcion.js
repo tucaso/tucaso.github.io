@@ -136,9 +136,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ getPlans }, dispatch);
 }
 
-export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(Subcripcion)
-);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Subcripcion));

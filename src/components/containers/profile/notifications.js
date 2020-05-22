@@ -139,7 +139,11 @@ class Notifications extends Component {
             {this.state.modalErrorMessage !== '' && (
               <div className="modal-error-message">
                 <span>{this.state.modalErrorMessage}</span>
-                <CloseOutlined className="close" type="close" onClick={() => this.setState({ modalErrorMessage: '' })} />
+                <CloseOutlined
+                  className="close"
+                  type="close"
+                  onClick={() => this.setState({ modalErrorMessage: '' })}
+                />
               </div>
             )}
             <div className="input">
@@ -181,9 +185,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ updateCurrentUser, getCurrentUser }, dispatch);
 }
 
-export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(Form.create()(Notifications))
-);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Form.create()(Notifications)));
